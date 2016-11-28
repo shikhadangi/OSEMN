@@ -20,8 +20,11 @@ searchR <- '+language:r'
 pageNo <- '&page=1'                                          
 pageSize <- '&per_page=100'                                    
 URLJan <-paste0(url, path, searchJan, searchR, pageNo, pageSize)
+jan = jsonlite::fromJSON(URLJan)
+j<-data.frame(jan)
 URLFeb <-paste0(url, path, searchFeb, searchR, pageNo, pageSize)
-l = jsonlite::fromJSON(URLJan)
-df<-data.frame(l)
-df
+feb = jsonlite::fromJSON(URLFeb)
+f<-data.frame(feb)
+j
+f
 ```
